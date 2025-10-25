@@ -1,0 +1,5 @@
+body { background:#0b0b0c; color:#e8e8ea; font-family: Inter, sans-serif; }
+.brand-mark { width:28px; height:28px; border-radius:8px; background:#e11900; color:#fff; font-weight:bold; display:flex; align-items:center; justify-content:center; }
+.navbar, .alert { background:#17171a; }
+.btn-primary { background:#e11900; border:none; }
+.copyable { cursor:pointer; color:#ff4a3f; text-decoration:underline; }

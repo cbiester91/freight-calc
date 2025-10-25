@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>LB Shared — Freight Quote</title>
+  <link href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta20/dist/css/tabler.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="layout-boxed">
+  <header class="navbar navbar-expand-md">
+    <div class="container-xl d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-2">
+        <span class="brand-mark">LB</span>
+        <h1 class="h4 m-0">LB Shared</h1>
+      </div>
+      <span class="text-muted">No fuel surcharge</span>
+    </div>
+  </header>
+
+  <div class="alert alert-important rounded-0" role="alert">
+    <div class="container-xl">
+      <strong>Contract Limit:</strong> 325,000 m³ maximum per contract
+    </div>
+  </div>
+
+  <main class="page-body">
+    <div class="container-xl mt-4">
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">Get a Quote</h2></div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label class="form-label required">Cargo Volume (m³)</label>
+                <input type="number" id="volume" class="form-control" placeholder="e.g. 120000" min="1" max="325000" step="1" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Amount (ISK)</label>
+                <input type="number" id="amount" class="form-control" placeholder="Optional reference amount" min="0" step="1">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label required">Delivery Location</label>
+                <select id="location" class="form-select">
+                  <option value="R-AG7W - R A G S T A R">R-AG7W — R A G S T A R</option>
+                  <option value="KH-EWC - more more">KH-EWC — more more</option>
+                  <option value="KGCF-5 - NF Splashtizar">KGCF-5 — NF Splashtizar</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label required">Rush?</label>
+                <div class="form-selectgroup">
+                  <label class="form-selectgroup-item">
+                    <input type="radio" name="rush" value="no" class="form-selectgroup-input" checked>
+                    <span class="form-selectgroup-label">No</span>
+                  </label>
+                  <label class="form-selectgroup-item">
+                    <input type="radio" name="rush" value="yes" class="form-selectgroup-input">
+                    <span class="form-selectgroup-label">Yes (+75,000,000 ISK)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="d-flex">
+                <button id="calc-btn" class="btn btn-primary">Calculate</button>
+                <button id="clear-btn" class="btn btn-link ms-auto" type="button">Clear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header"><h2 class="card-title">Reward</h2></div>
+            <div class="card-body">
+              <p><strong>Volume:</strong> <span class="copyable" id="q-volume">—</span></p>
+              <p><strong>Base:</strong> <span class="copyable" id="q-base">—</span></p>
+              <p><strong>Rush:</strong> <span class="copyable" id="q-rush">—</span></p>
+              <p><strong>Reward:</strong> <span class="copyable" id="q-total">—</span></p>
+              <p><strong>Location:</strong> <span class="copyable" id="q-location">R-AG7W — R A G S T A R</span></p>
+              <hr>
+              <p><strong>Expiration:</strong> <span class="copyable" id="q-expiration">7 days</span></p>
+              <p><strong>Days to Complete:</strong> <span class="copyable" id="q-days">3</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-4 p-3 text-center text-muted small">
+    <div class="container-xl">
+      <p><strong>Disclaimer:</strong> Collateral should be set to the Janice value or a maximum of 2,000,000,000 ISK (2 billion) per contract.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
